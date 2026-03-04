@@ -56,9 +56,9 @@ class lora_rx_sdrplay_headless(gr.top_block):
 
         # ZMQ pub sinks (same ports as GUI version)
         self.zeromq_pub_sink_1 = zeromq.pub_sink(
-            gr.sizeof_gr_complex, 1, 'tcp://0.0.0.0:20003', 100, False, (-1), '', True, True)
+            gr.sizeof_gr_complex, 1, 'tcp://0.0.0.0:20003', 100, False, (-1), '', True)
         self.zeromq_pub_sink_0 = zeromq.pub_sink(
-            gr.sizeof_char, 1, 'tcp://0.0.0.0:20002', 100, False, (-1), '', True, True)
+            gr.sizeof_char, 1, 'tcp://0.0.0.0:20002', 100, False, (-1), '', True)
 
         # SDRplay RSPdx R2 source
         self.sdrplay3_rspdxr2_0 = sdrplay3.rspdxr2(

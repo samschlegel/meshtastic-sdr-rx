@@ -1,7 +1,8 @@
 services:
   meshtastic-sdr-rx:
-    image: ghcr.io/samschlegel/meshtastic-sdr-rx:latest
+    image: ghcr.io/samschlegel/meshtastic-sdr-rx:main
     build: .
+    platform: linux/arm64
     privileged: true
     restart: unless-stopped
     ports:
