@@ -78,6 +78,7 @@ class lora_rx_sdrplay(gr.top_block, Qt.QWidget):
         # Blocks
         ##################################################
 
+        self.zeromq_pub_sink_1 = zeromq.pub_sink(gr.sizeof_gr_complex, 1, 'tcp://0.0.0.0:20003', 100, False, (-1), '', True, True)
         self.zeromq_pub_sink_0 = zeromq.pub_sink(gr.sizeof_char, 1, 'tcp://0.0.0.0:20002', 100, False, (-1), '', True, True)
         self.sdrplay3_rspdxr2_0 = sdrplay3.rspdxr2(
             '',
@@ -215,6 +216,7 @@ class lora_rx_sdrplay(gr.top_block, Qt.QWidget):
         self.connect((self.sdrplay3_rspdxr2_0, 0), (self.lora_sdr_frame_sync_0, 0))
         self.connect((self.sdrplay3_rspdxr2_0, 0), (self.qtgui_freq_sink_x_0, 0))
         self.connect((self.sdrplay3_rspdxr2_0, 0), (self.qtgui_waterfall_sink_x_0, 0))
+        self.connect((self.sdrplay3_rspdxr2_0, 0), (self.zeromq_pub_sink_1, 0))
 
 
     def closeEvent(self, event):

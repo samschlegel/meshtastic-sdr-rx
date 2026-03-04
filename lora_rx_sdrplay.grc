@@ -497,6 +497,28 @@ blocks:
     coordinate: [1680, 308.0]
     rotation: 0
     state: enabled
+- name: zeromq_pub_sink_1
+  id: zeromq_pub_sink
+  parameters:
+    address: tcp://0.0.0.0:20003
+    affinity: ''
+    alias: ''
+    bind: 'True'
+    comment: Raw IQ for dashboard
+    drop_on_hwm: 'True'
+    hwm: '-1'
+    key: ''
+    pass_tags: 'False'
+    timeout: '100'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 760.0]
+    rotation: 0
+    state: enabled
 
 connections:
 - [lora_sdr_crc_verif_0, '0', zeromq_pub_sink_0, '0']
@@ -511,6 +533,7 @@ connections:
 - [sdrplay3_rspdxr2_0, '0', lora_sdr_frame_sync_0, '0']
 - [sdrplay3_rspdxr2_0, '0', qtgui_freq_sink_x_0, '0']
 - [sdrplay3_rspdxr2_0, '0', qtgui_waterfall_sink_x_0, '0']
+- [sdrplay3_rspdxr2_0, '0', zeromq_pub_sink_1, '0']
 
 metadata:
   file_format: 1

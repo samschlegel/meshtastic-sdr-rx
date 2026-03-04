@@ -1,0 +1,20 @@
+services:
+  meshtastic-sdr-rx:
+    image: ghcr.io/samschlegel/meshtastic-sdr-rx:latest
+    build: .
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+    environment:
+      - CENTER_FREQ=913.125e6
+      - SAMP_RATE=1000000
+      - BW=250000
+      - SF=9
+      - CR=1
+      - IF_GAIN=40
+      - LNA_STATE=10
+      - ANTENNA=Antenna A
+      # - MESHTASTIC_AES_KEY=<your-base64-key>

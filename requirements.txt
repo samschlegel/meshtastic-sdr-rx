@@ -1,0 +1,9 @@
+flask>=3.0,<4.0
+flask-sock>=0.7,<1.0
+pyzmq>=25.0,<27.0
+numpy>=1.24,<3.0
+scipy>=1.10,<2.0
+matplotlib>=3.7,<4.0
+cryptography>=41.0,<44.0
+meshtastic>=2.3,<3.0
+protobuf>=4.21,<6.0

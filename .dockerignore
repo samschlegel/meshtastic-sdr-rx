@@ -1,0 +1,10 @@
+.git
+.github
+.claude
+.gitignore
+.dockerignore
+__pycache__
+*.pyc
+*.grc
+*.md
+LICENSE
